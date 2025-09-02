@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <title>Niyantri House - Contact</title>
+  <script src='https://cdn.tailwindcss.com'></script>
+  <link href='https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap' rel='stylesheet'>
+</head>
+<body class='opacity-0 transition-opacity duration-700' style='font-family: Inter, sans-serif;'>
+  <header class='bg-white/70 backdrop-blur-xl sticky top-0 z-50 shadow-sm'>
+    <nav class='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
+      <div class='flex items-center justify-between h-16'>
+        <div class='flex items-center space-x-3'>
+          <svg width='32' height='32' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg' aria-label='Niyantri House logo'>
+            <circle cx='12' cy='12' r='10' stroke='#f59e0b' stroke-width='2'/>
+            <path d='M8 12h8' stroke='#f59e0b' stroke-width='2' stroke-linecap='round'/>
+          </svg>
+          <a href='index.html' class='text-xl font-bold' style='font-family: Playfair Display, serif;'>Niyantri House</a>
+        </div>
+        <div class='hidden md:flex space-x-6'>
+          <a href='index.html' class='text-gray-700 hover:text-black px-3 py-2 rounded-md text-sm font-medium'>Home</a>
+          <a href='menu.html' class='text-gray-700 hover:text-black px-3 py-2 rounded-md text-sm font-medium'>Menu</a>
+          <a href='cart.html' class='text-gray-700 hover:text-black px-3 py-2 rounded-md text-sm font-medium'>Cart (<span id='cart-count'>0</span>)</a>
+          <a href='about.html' class='text-gray-700 hover:text-black px-3 py-2 rounded-md text-sm font-medium'>About</a>
+          <a href='contact.html' class='text-gray-700 hover:text-black px-3 py-2 rounded-md text-sm font-medium'>Contact</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class='container mx-auto px-4 py-8'>
+    <section class='bg-white/70 backdrop-blur-md rounded-xl p-6 shadow' style='max-width: 700px; margin: 0 auto;'>
+      <h1 class='text-2xl font-semibold mb-4' style='font-family: Playfair Display, serif;'>Get in touch</h1>
+      <form>
+        <div class='mb-4'>
+          <label class='block mb-1'>Name</label>
+          <input class='w-full border rounded px-3 py-2' type='text' placeholder='Your name'>
+        </div>
+        <div class='mb-4'>
+          <label class='block mb-1'>Email</label>
+          <input class='w-full border rounded px-3 py-2' type='email' placeholder='you@example.com'>
+        </div>
+        <div class='mb-4'>
+          <label class='block mb-1'>Message</label>
+          <textarea class='w-full border rounded px-3 py-2' rows='4' placeholder='Your message'></textarea>
+        </div>
+        <button type='button' class='bg-yellow-500 text-black px-4 py-2 rounded'>Send Message</button>
+      </form>
+      <p class='mt-4 text-sm text-gray-600'>Our Hyderabad, India address: 123 Khairatabad, Hyderabad, Telangana, India</p>
+    </section>
+  </main>
+
+  <footer class='bg-gray-800 text-white py-6 mt-8'>
+    <div class='container mx-auto px-4 text-center'>
+      <p>&copy; 2025 Niyantri House. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    function updateCartCount(){ const cart = JSON.parse(localStorage.getItem('shoppingCart') || '[]'); const total = cart.reduce((s,i)=> s + (i.quantity||0), 0); const el = document.getElementById('cart-count'); const elSm = document.getElementById('cart-count-sm'); if (el) el.textContent = total; if (elSm) elSm.textContent = total; }
+    document.addEventListener('DOMContentLoaded', () => { document.body.classList.remove('opacity-0'); updateCartCount(); const btn = document.getElementById('mobile-menu'); if (btn){ btn.addEventListener('click', () => { const panel = document.getElementById('mobile-menu-panel'); panel.classList.toggle('hidden'); }); } });
+  </script>
+</body>
+</html>
