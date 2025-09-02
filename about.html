@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <title>Niyantri House - About</title>
+  <script src='https://cdn.tailwindcss.com'></script>
+  <link href='https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap' rel='stylesheet'>
+</head>
+<body class='opacity-0 transition-opacity duration-700' style='font-family: Inter, ui-sans-serif, system-ui;'>
+  <header class='bg-white/70 backdrop-blur-xl sticky top-0 z-50 shadow-sm'>
+    <nav class='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
+      <div class='flex items-center justify-between h-16'>
+        <div class='flex items-center space-x-3'>
+          <svg width='32' height='32' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg' aria-label='Niyantri House logo'>
+            <circle cx='12' cy='12' r='10' stroke='#f59e0b' stroke-width='2'/>
+            <path d='M8 12h8' stroke='#f59e0b' stroke-width='2' stroke-linecap='round'/>
+          </svg>
+          <a href='index.html' class='text-xl font-bold' style='font-family: Playfair Display, serif;'>Niyantri House</a>
+        </div>
+        <div class='hidden md:flex space-x-6'>
+          <a href='index.html' class='text-gray-700 hover:text-black px-3 py-2 rounded-md text-sm font-medium'>Home</a>
+          <a href='menu.html' class='text-gray-700 hover:text-black px-3 py-2 rounded-md text-sm font-medium'>Menu</a>
+          <a href='cart.html' class='text-gray-700 hover:text-black px-3 py-2 rounded-md text-sm font-medium'>Cart (<span id='cart-count'>0</span>)</a>
+          <a href='about.html' class='text-gray-700 hover:text-black px-3 py-2 rounded-md text-sm font-medium'>About</a>
+          <a href='contact.html' class='text-gray-700 hover:text-black px-3 py-2 rounded-md text-sm font-medium'>Contact</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class='container mx-auto px-4 py-8'>
+    <section class='reveal'>
+      <h1 class='text-3xl font-extrabold' style='font-family: Playfair Display, serif;'>About Niyantri House</h1>
+      <p class='mt-4 text-gray-700'>Niyantri House is a family-owned restaurant blending Hyderabadi flavors with contemporary dining. Our team crafts comfort foods with a modern twist, using locally sourced ingredients to create a warm, inviting space in Hyderabad.</p>
+    </section>
+
+    <section class='reveal mt-6 grid grid-cols-1 md:grid-cols-2 gap-6'>
+      <div class='bg-white/70 backdrop-blur-md rounded-xl p-4 shadow'>
+        <h2 class='text-xl font-semibold' style='font-family: Playfair Display, serif;'>Our Philosophy</h2>
+        <p class='text-sm'>Hospitality, quality, and a love for bold flavors guide every dish we serve.</p>
+      </div>
+      <div class='flex items-center justify-center'>
+        <img src='https://pixabay.com/get/g86caca73bbf89395762b35155ddaf6b9666c7664ac4a12efe47d51db3e6236a9bf51628b6fd46dfc1a150c039a33b0e99713353ff85ea27b74ba6821c889e859_640.jpg' alt='Interior' class='w-full h-48 object-cover rounded-xl'>
+      </div>
+    </section>
+  </main>
+
+  <footer class='bg-gray-800 text-white py-6 mt-8'>
+    <div class='container mx-auto px-4 text-center'>
+      <p>&copy; 2025 Niyantri House. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    function updateCartCount(){ const cart = JSON.parse(localStorage.getItem('shoppingCart') || '[]'); const total = cart.reduce((s,i)=> s + (i.quantity||0), 0); const el = document.getElementById('cart-count'); if (el) el.textContent = total; }
+    document.addEventListener('DOMContentLoaded', () => { document.body.classList.remove('opacity-0'); updateCartCount(); const btn = document.getElementById('mobile-menu'); if (btn){ btn.addEventListener('click', () => { const panel = document.getElementById('mobile-menu-panel'); panel.classList.toggle('hidden'); }); } const reveals = document.querySelectorAll('.reveal'); const io = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting){ e.target.classList.remove('opacity-0','translate-y-6'); e.target.classList.add('opacity-100','translate-y-0'); } }); }, { threshold: 0.1 }); reveals.forEach(r => { r.classList.add('opacity-0','translate-y-6'); io.observe(r); }); });
+  </script>
+</body>
+</html>
