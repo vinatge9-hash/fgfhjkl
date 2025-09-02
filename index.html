@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <title>Niyantri House - Home</title>
+  <script src='https://cdn.tailwindcss.com'></script>
+  <link href='https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap' rel='stylesheet'>
+  <link rel='stylesheet' href='https://unpkg.com/swiper/swiper-bundle.min.css'/>
+  <script src='https://unpkg.com/swiper/swiper-bundle.min.js'></script>
+</head>
+<body class='opacity-0 transition-opacity duration-700' style='font-family: Inter, ui-sans-serif, system-ui, -apple-system;'>
+  <!-- Header / Navbar (identical across pages) -->
+  <header class='bg-white/70 backdrop-blur-xl sticky top-0 z-50 shadow-sm'>
+    <nav class='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
+      <div class='flex items-center justify-between h-16'>
+        <div class='flex items-center space-x-3'>
+          <!-- Brand Logo (inline SVG) -->
+          <svg width='32' height='32' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg' aria-label='Niyantri House logo'>
+            <circle cx='12' cy='12' r='10' stroke='#f59e0b' stroke-width='2'/>
+            <path d='M8 12h8' stroke='#f59e0b' stroke-width='2' stroke-linecap='round'/>
+          </svg>
+          <a href='index.html' class='text-xl font-bold' style='font-family: Playfair Display, serif;'>Niyantri House</a>
+        </div>
+        <div class='hidden md:flex space-x-6'>
+          <a href='index.html' class='text-gray-700 hover:text-black px-3 py-2 rounded-md text-sm font-medium'>Home</a>
+          <a href='menu.html' class='text-gray-700 hover:text-black px-3 py-2 rounded-md text-sm font-medium'>Menu</a>
+          <a href='cart.html' class='text-gray-700 hover:text-black px-3 py-2 rounded-md text-sm font-medium'>Cart (<span id='cart-count'>0</span>)</a>
+          <a href='about.html' class='text-gray-700 hover:text-black px-3 py-2 rounded-md text-sm font-medium'>About</a>
+          <a href='contact.html' class='text-gray-700 hover:text-black px-3 py-2 rounded-md text-sm font-medium'>Contact</a>
+        </div>
+        <div class='md:hidden'>
+          <button id='mobile-menu' class='text-gray-700 focus:outline-none'>
+            <svg width='24' height='24' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
+              <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M4 6h16M4 12h16M4 18h16'/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </nav>
+    <!-- Mobile Menu -->
+    <div id='mobile-menu-panel' class='hidden md:hidden bg-white/90 backdrop-filter backdrop-blur-lg'>
+      <a href='index.html' class='block px-4 py-2'>Home</a>
+      <a href='menu.html' class='block px-4 py-2'>Menu</a>
+      <a href='cart.html' class='block px-4 py-2'>Cart (<span id='cart-count-sm'>0</span>)</a>
+      <a href='about.html' class='block px-4 py-2'>About</a>
+      <a href='contact.html' class='block px-4 py-2'>Contact</a>
+    </div>
+  </header>
+
+  <main class='pt-20'>
+    <!-- Swiper Hero Gallery -->
+    <section class='container mx-auto px-4 mb-8 reveal'>
+      <div class='swiper-container mySwiper rounded-lg overflow-hidden shadow-lg'>
+        <div class='swiper-wrapper'>
+          <div class='swiper-slide'>
+            <img src='https://images.unsplash.com/photo-1696454599025-42b5089f58dc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3ODkyNDZ8MHwxfHNlYXJjaHw1fHxBJTIwdmlicmFudCUyMEh5ZGVyYWJhZGklMjBiaXJ5YW5pJTIwc2VydmVkJTIwaW4lMjBhJTIwZnJhZ3JhbnQlMjBwb3R8ZW58MHwwfHx8MTc1NjgxMjIzNHww&ixlib=rb-4.1.0&q=80&w=1080' alt='Hyderabadi Biryani' class='w-full h-72 object-cover'>
+          </div>
+          <div class='swiper-slide'>
+            <img src='https://pixabay.com/get/ge46feda8d6d4872b5189b7eb2ec1e3b19dfbb5b84c7448f2dcaba3e27feff329ddff825eefb96f327b5f5197e28b1d4b19bc94205c5ed8db3703ab189c8b3040_640.jpg' alt='Tandoori Kebabs' class='w-full h-72 object-cover'>
+          </div>
+          <div class='swiper-slide'>
+            <img src='https://pixabay.com/get/ga4fdbbf04e028d0bd8abe3291643fd4fe5143dabb0b158fc91ec06cafedffd735b67458dd1f5b27441d827ff1c71bf8f10e0258122f93fd029ad158e0e154dee_640.jpg' alt='Curry and Naan' class='w-full h-72 object-cover'>
+          </div>
+        </div>
+        <div class='swiper-pagination'></div>
+      </div>
+    </section>
+
+    <!-- Intro -->
+    <section class='container mx-auto px-4 my-8 reveal'>
+      <div class='bg-white/60 backdrop-blur-md rounded-xl p-6 shadow'>
+        <h1 class='text-4xl md:text-5xl font-extrabold' style='font-family: Playfair Display, serif;'>Niyantri House</h1>
+        <p class='mt-4 text-lg'>A warm, contemporary restaurant in Hyderabad, serving comforting Indian flavors with a modern twist.</p>
+        <div class='mt-6 space-x-4'>
+          <a href='menu.html' class='inline-block bg-yellow-500 text-black px-5 py-3 rounded-md shadow hover:bg-yellow-400 transition'>View Menu</a>
+          <a href='contact.html' class='inline-block border border-yellow-500 text-yellow-700 px-5 py-3 rounded-md hover:bg-yellow-50 transition'>Reserve a Table</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class='container mx-auto px-4 my-8 reveal'>
+      <h2 class='text-2xl font-semibold mb-4' style='font-family: Playfair Display, serif;'>What our guests say</h2>
+      <div class='grid grid-cols-1 md:grid-cols-3 gap-6'>
+        <blockquote class='p-4 border rounded-lg bg-white/70'>"An extraordinary dining experience with warm hospitality."</blockquote>
+        <blockquote class='p-4 border rounded-lg bg-white/70'>"The flavors are vibrant and the ambiance is inviting."</blockquote>
+        <blockquote class='p-4 border rounded-lg bg-white/70'>"Hyderabad's charm meets modern cuisine at Niyantri House."</blockquote>
+      </div>
+    </section>
+  </main>
+
+  <footer class='bg-gray-800 text-white py-6 mt-8'>
+    <div class='container mx-auto px-4 text-center'>
+      <p>&copy; 2025 Niyantri House. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Shared scripts -->
+  <script>
+    // Card/cart utilities (shared across pages)
+    function getCart(){ try { return JSON.parse(localStorage.getItem('shoppingCart')) || []; } catch(e){ return []; } }
+    function saveCart(cart){ localStorage.setItem('shoppingCart', JSON.stringify(cart)); updateCartCount(); }
+    function addToCart(id, name, price){ const cart = getCart(); const existing = cart.find(i => i.id === id); if (existing){ existing.quantity++; } else { cart.push({ id, name, price, quantity: 1 }); } saveCart(cart); alert(name + ' added to cart.'); }
+    function removeFromCart(id){ let cart = getCart(); cart = cart.filter(i => i.id !== id); saveCart(cart); renderCartPage(); }
+    function updateCartCount(){ const cart = getCart(); const total = cart.reduce((sum, item) => sum + (item.quantity || 0), 0); const el = document.getElementById('cart-count'); if (el) el.textContent = total; const elSm = document.getElementById('cart-count-sm'); if (elSm) elSm.textContent = total; }
+    function renderCartPage(){ const cart = getCart(); const container = document.getElementById('cart-items-container'); const totalEl = document.getElementById('cart-total'); if (!container || !totalEl) return; container.innerHTML = ''; if (cart.length === 0){ container.innerHTML = '<p>Your cart is empty.</p>'; totalEl.textContent = '0.00'; return; } let total = 0; cart.forEach(item => {
+          const row = document.createElement('div');
+          row.className = 'flex justify-between items-center border-b py-2';
+          row.innerHTML = `<span>${item.name} (x${item.quantity})</span><div><span>$${(item.price * item.quantity).toFixed(2)}</span><button onclick='removeFromCart("${item.id}")' class='ml-4 text-red-500 hover:text-red-700'>Remove</button></div>`;
+          container.appendChild(row); total += item.price * item.quantity; }); totalEl.textContent = total.toFixed(2);
+      }
+    function proceedToCheckout(){ const cart = getCart(); if (cart.length > 0) { window.location.href = './checkout.html'; } else { alert('Your cart is empty.'); } }
+
+    // Reveal-on-scroll for sections
+    document.addEventListener('DOMContentLoaded', () => {
+      updateCartCount();
+      // Page fade-in
+      document.body.classList.remove('opacity-0');
+      // Simple scroll reveal
+      const reveals = document.querySelectorAll('.reveal');
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.remove('opacity-0','translate-y-6'); e.target.classList.add('opacity-100','translate-y-0'); } });
+      }, { threshold: 0.1 });
+      reveals.forEach(r => {
+        if (!r.classList.contains('opacity-100')) { r.classList.add('opacity-0','translate-y-6'); io.observe(r); }
+      });
+      // Init Swiper
+      new Swiper('.mySwiper', { loop: true, autoplay: { delay: 3500 }, pagination: { el: '.swiper-pagination', clickable: true } });
+    });
+  </script>
+  <script src='https://www.paypal.com/sdk/js?client-id=sb&currency=USD'></script>
+  <script>
+    // PayPal integration on the Cart page (only render where container exists)
+    document.addEventListener('DOMContentLoaded', () => {
+      if (document.getElementById('paypal-button-container')) {
+        const cart = getCart(); const total = cart.reduce((sum, i) => sum + i.price * i.quantity, 0).toFixed(2);
+        if (typeof paypal !== 'undefined') {
+          paypal.Buttons({
+            createOrder: (data, actions) => {
+              return actions.order.create({ purchase_units: [{ amount: { value: total } }] });
+            },
+            onApprove: (data, actions) => {
+              return actions.order.capture().then(details => {
+                alert('Payment completed by ' + details.payer.name.given_name);
+                localStorage.removeItem('shoppingCart');
+                updateCartCount();
+                renderCartPage();
+              });
+            }
+          }).render('#paypal-button-container');
+        }
+      }
+    });
+  </script>
+</body>
+</html>
