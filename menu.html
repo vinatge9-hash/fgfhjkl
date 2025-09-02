@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <title>Niyantri House - Menu</title>
+  <script src='https://cdn.tailwindcss.com'></script>
+  <link href='https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap' rel='stylesheet'>
+  <link rel='stylesheet' href='https://unpkg.com/swiper/swiper-bundle.min.css'/>
+  <script src='https://unpkg.com/swiper/swiper-bundle.min.js'></script>
+</head>
+<body class='opacity-0 transition-opacity duration-700' style='font-family: Inter, ui-sans-serif, system-ui;'>
+  <header class='bg-white/70 backdrop-blur-xl sticky top-0 z-50 shadow-sm'>
+    <nav class='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
+      <div class='flex items-center justify-between h-16'>
+        <div class='flex items-center space-x-3'>
+          <svg width='32' height='32' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg' aria-label='Niyantri House logo'>
+            <circle cx='12' cy='12' r='10' stroke='#f59e0b' stroke-width='2'/>
+            <path d='M8 12h8' stroke='#f59e0b' stroke-width='2' stroke-linecap='round'/>
+          </svg>
+          <a href='index.html' class='text-xl font-bold' style='font-family: Playfair Display, serif;'>Niyantri House</a>
+        </div>
+        <div class='hidden md:flex space-x-6'>
+          <a href='index.html' class='text-gray-700 hover:text-black px-3 py-2 rounded-md text-sm font-medium'>Home</a>
+          <a href='menu.html' class='text-gray-700 hover:text-black px-3 py-2 rounded-md text-sm font-medium'>Menu</a>
+          <a href='cart.html' class='text-gray-700 hover:text-black px-3 py-2 rounded-md text-sm font-medium'>Cart (<span id='cart-count'>0</span>)</a>
+          <a href='about.html' class='text-gray-700 hover:text-black px-3 py-2 rounded-md text-sm font-medium'>About</a>
+          <a href='contact.html' class='text-gray-700 hover:text-black px-3 py-2 rounded-md text-sm font-medium'>Contact</a>
+        </div>
+        <div class='md:hidden'>
+          <button id='mobile-menu' class='text-gray-700 focus:outline-none'>
+            <svg width='24' height='24' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
+              <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M4 6h16M4 12h16M4 18h16'/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </nav>
+    <div id='mobile-menu-panel' class='hidden md:hidden bg-white/90 backdrop-filter backdrop-blur-lg'>
+      <a href='index.html' class='block px-4 py-2'>Home</a>
+      <a href='menu.html' class='block px-4 py-2'>Menu</a>
+      <a href='cart.html' class='block px-4 py-2'>Cart (<span id='cart-count-sm'>0</span>)</a>
+      <a href='about.html' class='block px-4 py-2'>About</a>
+      <a href='contact.html' class='block px-4 py-2'>Contact</a>
+    </div>
+  </header>
+
+  <main class='pt-20'>
+    <section class='container mx-auto px-4 reveal'>
+      <h1 class='text-3xl md:text-4xl font-extrabold' style='font-family: Playfair Display, serif;'>Our Menu</h1>
+      <p class='mt-2 text-gray-700'>Explore a curated selection of authentic flavors with a modern twist.</p>
+      <div class='mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
+        <!-- Menu item 1 -->
+        <div class='bg-white/70 backdrop-blur-md rounded-xl p-4 shadow'>
+          <img src='https://images.pexels.com/photos/17050759/pexels-photo-17050759.jpeg?auto=compress&cs=tinysrgb&h=650&w=940' alt='Paneer Tikka' class='w-full h-40 object-cover rounded'/>
+          <h3 class='mt-2 font-semibold' style='font-family: Playfair Display, serif;'>Paneer Tikka</h3>
+          <p class='text-sm text-gray-600'>Creamy paneer skewers with charred edges.</p>
+          <div class='flex items-center justify-between mt-2'>
+            <span class='font-semibold'>$9.99</span>
+            <button onclick="addToCart('item-1','Paneer Tikka',9.99)" class='bg-yellow-500 text-black px-3 py-2 rounded'>Add to Cart</button>
+          </div>
+        </div>
+        <!-- Menu item 2 -->
+        <div class='bg-white/70 backdrop-blur-md rounded-xl p-4 shadow'>
+          <img src='https://images.pexels.com/photos/14731636/pexels-photo-14731636.jpeg?auto=compress&cs=tinysrgb&h=650&w=940' alt='Hyderabadi Chicken Biryani' class='w-full h-40 object-cover rounded'/>
+          <h3 class='mt-2 font-semibold' style='font-family: Playfair Display, serif;'>Hyderabadi Chicken Biryani</h3>
+          <p class='text-sm text-gray-600'>Aromatic basmati rice with tender chicken pieces.</p>
+          <div class='flex items-center justify-between mt-2'>
+            <span class='font-semibold'>$12.99</span>
+            <button onclick="addToCart('item-2','Hyderabadi Chicken Biryani',12.99)" class='bg-yellow-500 text-black px-3 py-2 rounded'>Add to Cart</button>
+          </div>
+        </div>
+        <!-- Menu item 3 -->
+        <div class='bg-white/70 backdrop-blur-md rounded-xl p-4 shadow'>
+          <img src='https://images.unsplash.com/photo-1683533738338-19b9a22c6405?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3ODkyNDZ8MHwxfHNlYXJjaHw3fHxHYXJsaWMlMjBuYWFuJTIwd2l0aCUyMGN1cnJ5fGVufDB8MHx8fDE3NTY4MTIyNDN8MA&ixlib=rb-4.1.0&q=80&w=1080' alt='Garlic Naan with Butter Chicken' class='w-full h-40 object-cover rounded'/>
+          <h3 class='mt-2 font-semibold' style='font-family: Playfair Display, serif;'>Butter Garlic Naan & Curry</h3>
+          <p class='text-sm text-gray-600'>Fluffy naan with a rich garlic butter curry.</p>
+          <div class='flex items-center justify-between mt-2'>
+            <span class='font-semibold'>$8.50</span>
+            <button onclick="addToCart('item-3','Butter Garlic Naan & Curry',8.5)" class='bg-yellow-500 text-black px-3 py-2 rounded'>Add to Cart</button>
+          </div>
+        </div>
+        <!-- Menu item 4 -->
+        <div class='bg-white/70 backdrop-blur-md rounded-xl p-4 shadow'>
+          <img src='https://pixabay.com/get/g6a6aac90db8571455097cd4e45c2b00cb5ccd4f810a958552f708780fb8279cf150930059df64cabd3cf89a729cae70d_640.jpg' alt='Dal Tadka' class='w-full h-40 object-cover rounded'/>
+          <h3 class='mt-2 font-semibold' style='font-family: Playfair Display, serif;'>Dal Tadka</h3>
+          <p class='text-sm text-gray-600'>Comforting lentil curry with spices.</p>
+          <div class='flex items-center justify-between mt-2'>
+            <span class='font-semibold'>$7.99</span>
+            <button onclick="addToCart('item-4','Dal Tadka',7.99)" class='bg-yellow-500 text-black px-3 py-2 rounded'>Add to Cart</button>
+          </div>
+        </div>
+        <!-- Menu item 5 -->
+        <div class='bg-white/70 backdrop-blur-md rounded-xl p-4 shadow'>
+          <img src='https://images.unsplash.com/photo-1739217744880-472f59559cc5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3ODkyNDZ8MHwxfHNlYXJjaHwxMHx8UGFuZWVyJTIwa29mdGElMjBjdXJyeXxlbnwwfDB8fHwxNzU2ODEyMjQ1fDA&ixlib=rb-4.1.0&q=80&w=1080' alt='Paneer Kofta' class='w-full h-40 object-cover rounded'/>
+          <h3 class='mt-2 font-semibold' style='font-family: Playfair Display, serif;'>Paneer Kofta</h3>
+          <p class='text-sm text-gray-600'>Cottage cheese dumplings in rich gravy.</p>
+          <div class='flex items-center justify-between mt-2'>
+            <span class='font-semibold'>$9.49</span>
+            <button onclick="addToCart('item-5','Paneer Kofta',9.49)" class='bg-yellow-500 text-black px-3 py-2 rounded'>Add to Cart</button>
+          </div>
+        </div>
+        <!-- Menu item 6 -->
+        <div class='bg-white/70 backdrop-blur-md rounded-xl p-4 shadow'>
+          <img src='https://images.unsplash.com/photo-1571380519834-a829bb148dc5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3ODkyNDZ8MHwxfHNlYXJjaHw3fHxIeWRlcmFiYWRpJTIwbWlyY2hpJTIwa2ElMjBzYWxhbnxlbnwwfDB8fHwxNzU2ODEyMjQ2fDA&ixlib=rb-4.1.0&q=80&w=1080' alt='Mirchi ka Salan' class='w-full h-40 object-cover rounded'/>
+          <h3 class='mt-2 font-semibold' style='font-family: Playfair Display, serif;'>Mirchi Ka Salan</h3>
+          <p class='text-sm text-gray-600'>Spiced chili curry with peanuts and sesame.</p>
+          <div class='flex items-center justify-between mt-2'>
+            <span class='font-semibold'>$6.99</span>
+            <button onclick="addToCart('item-6','Mirchi Ka Salan',6.99)" class='bg-yellow-500 text-black px-3 py-2 rounded'>Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class='bg-gray-800 text-white py-6 mt-8'>
+    <div class='container mx-auto px-4 text-center'>
+      <p>&copy; 2025 Niyantri House. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    function getCart(){ try { return JSON.parse(localStorage.getItem('shoppingCart')) || []; } catch(e){ return []; } }
+    function saveCart(cart){ localStorage.setItem('shoppingCart', JSON.stringify(cart)); updateCartCount(); }
+    function addToCart(id, name, price){ const cart = getCart(); const existing = cart.find(i => i.id === id); if (existing){ existing.quantity++; } else { cart.push({ id, name, price, quantity: 1 }); } saveCart(cart); alert(name + ' added to cart.'); }
+    function updateCartCount(){ const cart = getCart(); const total = cart.reduce((sum, item) => sum + (item.quantity || 0), 0); const el = document.getElementById('cart-count'); if (el) el.textContent = total; const elSm = document.getElementById('cart-count-sm'); if (elSm) elSm.textContent = total; }
+    function renderCartPage(){ const cart = getCart(); const container = document.getElementById('cart-items-container'); const totalEl = document.getElementById('cart-total'); if (!container || !totalEl) return; container.innerHTML = ''; if (cart.length === 0){ container.innerHTML = '<p>Your cart is empty.</p>'; totalEl.textContent = '0.00'; return; } let total = 0; cart.forEach(item => {
+          const row = document.createElement('div'); row.className = 'flex justify-between items-center border-b py-2'; row.innerHTML = `<span>${item.name} (x${item.quantity})</span><div><span>$${(item.price * item.quantity).toFixed(2)}</span><button onclick='removeFromCart("${item.id}")' class='ml-4 text-red-500 hover:text-red-700'>Remove</button></div>`; container.appendChild(row); total += item.price * item.quantity; }); totalEl.textContent = total.toFixed(2); }
+    function proceedToCheckout(){ const cart = getCart(); if (cart.length > 0) { window.location.href = './checkout.html'; } else { alert('Your cart is empty.'); } }
+    document.addEventListener('DOMContentLoaded', () => {
+      updateCartCount();
+      document.body.classList.remove('opacity-0');
+      const reveals = document.querySelectorAll('.reveal'); const io = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.remove('opacity-0','translate-y-6'); e.target.classList.add('opacity-100','translate-y-0'); } }); }, { threshold: 0.1 }); reveals.forEach(r => { if (!r.classList.contains('opacity-100')) { r.classList.add('opacity-0','translate-y-6'); io.observe(r); } });
+      // Attach mobile menu toggle
+      const btn = document.getElementById('mobile-menu'); if (btn){ btn.addEventListener('click', () => { const panel = document.getElementById('mobile-menu-panel'); panel.classList.toggle('hidden'); }); }
+    });
+  </script>
+</body>
+</html>
